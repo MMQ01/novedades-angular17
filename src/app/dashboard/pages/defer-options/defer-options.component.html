@@ -1,0 +1,105 @@
+<app-title title="Defer Triggers"></app-title>
+
+<section>
+  <h1 class="text-xl">Interacciones</h1>
+  <hr class="my-2">
+
+
+  @defer (on interaction) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On Interections</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      Click en div
+    </div>
+  }
+</section>
+
+
+<section>
+
+  <hr class="my-2">
+
+  <button
+   #btnInteraction class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded tet-while my-2">
+    Click me!
+  </button>
+
+  @defer (on interaction(btnInteraction)) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On Interections</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      Placeholder div
+    </div>
+  }
+</section>
+
+
+<section>
+
+  <hr class="my-2">
+
+
+  @defer (on hover) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On Interections</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      Hover div
+    </div>
+  }
+</section>
+
+<section>
+
+  <hr class="my-2">
+
+
+  @defer (on immediate) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On Interections (Immediate)</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-purple-100">
+      Immediate div
+    </div>
+  }
+</section>
+
+
+<section>
+
+  <hr class="my-2">
+
+
+  @defer (on timer(5000)) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On timer</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-green-600">
+      5 seg
+    </div>
+  }
+</section>
+
+
+<section>
+
+  <hr class="my-2">
+
+
+  @defer (on hover; prefetch on idle) {
+    <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+      <span>On hover, idle</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-green-600">
+      Hover on idle
+    </div>
+  }
+</section>
